@@ -29,6 +29,7 @@ long_short_API = json.loads(reponse_long_short.text)
 long_short_df = pd.DataFrame(long_short_API)
 #Change Epoch Timestamp to Date
 long_short_df['date'] = pd.to_datetime([datetime.datetime.fromtimestamp(float(i)/1000.).strftime(datetime_format) for i in long_short_df['timestamp']])
+print(f"Binance Long/Short Max Date: {long_short_df['date'].max()}")
 
 #######################################################################################
 """Fear and Greed Data"""
