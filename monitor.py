@@ -14,7 +14,7 @@ import yagmail
 #Dates
 datetime_format = '%Y-%m-%d'
 today = datetime.datetime.today().strftime(datetime_format)
-
+print(today)
 #Email Alerts
 sending_email_username = 'klusjason.alerts@gmail.com'
 sending_email_password = 'baapukaxehkjhowu'
