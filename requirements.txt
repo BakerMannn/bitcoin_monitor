@@ -2,6 +2,5 @@ instauto
 pandas
 numpy
 bs4
-json
 requests
 yagmail
