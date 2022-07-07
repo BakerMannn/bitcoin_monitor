@@ -15,6 +15,7 @@ import yagmail
 datetime_format = '%Y-%m-%d'
 today = datetime.datetime.today().strftime(datetime_format)
 print(today)
+
 #Email Alerts
 sending_email_username = 'klusjason.alerts@gmail.com'
 sending_email_password = 'baapukaxehkjhowu'
@@ -47,8 +48,12 @@ merged_df = long_short_df.merge(fear_greed_df, on='date', how='left')
 
 #######################################################################################
 """Current Environment"""
-current_df = merged_df.loc[merged_df['date'] == today]
-current_long_short = float(current_df['longShortRatio'])
+try:
+    current_df = merged_df.loc[merged_df['date'] == today]
+    current_long_short = float(current_df['longShortRatio'])
+    print(current_long_short)
+except:
+    print('Today is too early')
 
 #######################################################################################
 """Notification"""
